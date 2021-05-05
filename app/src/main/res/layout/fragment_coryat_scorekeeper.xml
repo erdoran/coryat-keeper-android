@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.randoworks.coryatkeeper.ui.main.CoryatScorekeeperViewModel" />
+
+        <variable
+            name="handler"
+            type="com.randoworks.coryatkeeper.ui.main.ScoreHandler" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_board_blue_gradient">
+
+        <RadioGroup
+            android:id="@+id/coryat_round_select_rg"
+            style="@style/scorekeeper_header_rg"
+            android:checkedButton="@id/coryat_j_radio_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/coryat_j_radio_btn"
+                style="@style/scorekeeper_radio_btn"
+                android:onClick="@{() -> handler.clickJeopardyBtn()}"
+                android:text="@string/j_round_btn_string" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/coryat_dj_radio_btn"
+                style="@style/scorekeeper_radio_btn"
+                android:onClick="@{() -> handler.clickDoubleJeopardyBtn()}"
+                android:text="@string/dj_round_btn_string" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/coryat_fj_radio_btn"
+                style="@style/scorekeeper_radio_btn"
+                android:onClick="@{() -> handler.clickFinalJeopardyBtn()}"
+                android:text="@string/fj_round_btn_string" />
+        </RadioGroup>
+
+        <View
+            android:id="@+id/coryat_flash_border"
+            style="@style/flash_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coryat_round_select_rg" />
+
+        <TextView
+            android:id="@+id/coryat_score_tv"
+            style="@style/score_tv"
+            android:text="$"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/coryat_flash_border" />
+
+        <View
+            android:id="@+id/coryat_black_border"
+            style="@style/black_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coryat_score_tv" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/coryat_fragment_container"
+            android:name="com.randoworks.coryatkeeper.ui.main.CoryatJeopardyRoundFragment"
+            style="@style/round_fragment_container"
+            app:layout_constraintBottom_toTopOf="@id/coryat_scorekeeper_footer_ll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coryat_black_border"
+            tools:layout="@layout/fragment_coryat_jeopardy_round" />
+
+        <LinearLayout
+            android:id="@+id/coryat_scorekeeper_footer_ll"
+            style="@style/scorekeeper_footer_ll"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/coryat_exit_radio_btn"
+                style="@style/scorekeeper_menu_btn"
+                android:text="@string/exit_btn_string" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/coryat_edit_radio_btn"
+                style="@style/scorekeeper_menu_btn"
+                android:text="@string/edit_stats_btn_string" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/coryat_finish_radio_btn"
+                style="@style/scorekeeper_menu_btn"
+                android:text="@string/finish_btn_string" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

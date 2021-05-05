@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_board_blue_gradient">
+
+    <RadioGroup
+        android:id="@+id/casual_round_select_rg"
+        style="@style/scorekeeper_header_rg"
+        android:checkedButton="@id/casual_j_radio_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/casual_j_radio_btn"
+            style="@style/scorekeeper_radio_btn"
+            android:text="@string/j_round_btn_string" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/casual_dj_radio_btn"
+            style="@style/scorekeeper_radio_btn"
+            android:text="@string/dj_round_btn_string" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/casual_fj_radio_btn"
+            style="@style/scorekeeper_radio_btn"
+            android:text="@string/fj_round_btn_string" />
+    </RadioGroup>
+
+    <View
+        android:id="@+id/casual_flash_border"
+        style="@style/flash_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/casual_round_select_rg" />
+
+    <TextView
+        android:id="@+id/casual_score_tv"
+        style="@style/score_tv"
+        android:text="@string/init_score_string"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/casual_flash_border" />
+
+    <View
+        android:id="@+id/casual_black_border"
+        style="@style/black_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/casual_score_tv" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/casual_fragment_container"
+        android:name="com.randoworks.coryatkeeper.ui.main.CasualJeopardyRoundFragment"
+        style="@style/round_fragment_container"
+        app:layout_constraintBottom_toTopOf="@id/casual_scorekeeper_footer_ll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/casual_black_border"
+        tools:layout="@layout/fragment_casual_jeopardy_round" />
+
+    <LinearLayout
+        android:id="@+id/casual_scorekeeper_footer_ll"
+        style="@style/scorekeeper_footer_ll"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/casual_exit_btn"
+            style="@style/scorekeeper_menu_btn"
+            android:text="@string/exit_btn_string" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/casual_edit_radio_btn"
+            style="@style/scorekeeper_menu_btn"
+            android:text="@string/edit_stats_btn_string" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/casual_finish_radio_btn"
+            style="@style/scorekeeper_menu_btn"
+            android:text="@string/finish_btn_string" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="fj_title_tv" parent="clue_value_tv">
+        <item name="android:textSize">60sp</item>
+    </style>
+</resources>

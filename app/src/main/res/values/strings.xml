@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Coryat Keeper</string>
+
+    <!-- fragment_home layout -->
+    <string name="home_title_string">Coryat Keeper</string>
+    <string name="live_game_string">Live game scorekeeper</string>
+    <string name="play_archive_string">Play archived game</string>
+    <string name="stats_string">Stats</string>
+    <string name="about_this_string">About this application</string>
+    <!-- End fragment_home layout-->
+
+    <!-- fragment_live_mode_select layout -->
+    <string name="mode_select_title_string">Live Game Scorekeeper</string>
+    <string name="coryat_mode_btn_string">Coryat Scorekeeping</string>
+    <string name="coryat_mode_info_string">A scorekeeping method that does not account for wagering, but still tracks Daily Double and Final Jeopardy correctness. This method provides a more accurate representation of performance with respect to the game board.</string>
+    <string name="casual_mode_btn_string">Casual Scorekeeping</string>
+    <string name="casual_mode_info_string">A more traditional form of scorekeeping that permits wagering on Daily Double and Final Jeopardy clues.</string>
+    <!-- End fragment_live_mode_select layout -->
+
+    <!-- fragment_coryat_scorekeeper & fragment_casual_scorekeeper layouts shared -->
+    <string name="j_round_btn_string">Jeopardy</string>
+    <string name="dj_round_btn_string">Double Jeopardy</string>
+    <string name="fj_round_btn_string">Final Jeopardy</string>
+    <string name="edit_stats_btn_string">Edit Stats</string>
+    <string name="finish_btn_string">Finish Game</string>
+    <string name="exit_btn_string">Exit Game</string>
+    <string name="init_score_string">$0</string>
+    <!-- End fragment_coryat_scorekeeper & fragment_casual_scorekeeper layouts shared -->
+
+    <!-- coryat & casual jeopardy, double jeopardy & final jeopardy shared -->
+    <string name="value_200_tv_string">$200</string>
+    <string name="value_400_tv_string">$400</string>
+    <string name="value_600_tv_string">$600</string>
+    <string name="value_800_tv_string">$800</string>
+    <string name="value_1000_tv_string">$1000</string>
+    <string name="value_1200_tv_string">$1200</string>
+    <string name="value_1600_tv_string">$1600</string>
+    <string name="value_2000_tv_string">$2000</string>
+    <string name="value_fj_string">FINAL JEOPARDY</string>
+    <string name="score_miss_btn_string">-</string>
+    <string name="score_hit_btn_string">+</string>
+    <!-- end shared string resources -->
+
+    <!-- fragment_coryat_scorekeeper layout -->
+    <string name="coryat_dd_miss_btn_string">X</string>
+    <string name="value_dd_tv">DAILY DOUBLE</string>
+    <string name="coryat_dd_correct_btn_string">✓</string>
+    <string name="fj_correct_btn_string">Correct</string>
+    <string name="fj_incorrect_btn_string">Incorrect</string>
+    <!-- End fragment_coryat_scorekeeper layout -->
+
+    <!-- fragment_casual_scorekeeper layout -->
+    <string name="casual_wager_et_hint_string">Enter wager</string>
+    <!-- fragment_casual_scorekeeper_layout -->
+</resources>

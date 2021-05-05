@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_purple_pink_gradient">
+
+        <TextView
+            android:id="@+id/mode_title_tv"
+            style="@style/screen_title_tv"
+            android:text="@string/mode_select_title_string"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/coryat_mode_btn"
+            style="@style/live_mode_btn"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="64dp"
+            android:text="@string/coryat_mode_btn_string"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/mode_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/mode_title_tv" />
+
+        <TextView
+            android:id="@+id/coryat_info_tv"
+            style="@style/live_mode_info_tv"
+            android:text="@string/coryat_mode_info_string"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coryat_mode_btn" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/casual_mode_btn"
+            style="@style/live_mode_btn"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/casual_mode_btn_string"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coryat_info_tv" />
+
+        <TextView
+            android:id="@+id/casual_info_tv"
+            style="@style/live_mode_info_tv"
+            android:layout_marginBottom="32dp"
+            android:text="@string/casual_mode_info_string"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/casual_mode_btn"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

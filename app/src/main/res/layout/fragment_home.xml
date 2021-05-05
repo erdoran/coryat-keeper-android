@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_purple_pink_gradient">
+
+    <TextView
+        android:id="@+id/home_title_tv"
+        style="@style/screen_title_tv"
+        android:text="@string/home_title_string"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/live_game_btn"
+        style="@style/home_menu_btn"
+        android:text="@string/live_game_string"
+        app:layout_constraintBottom_toTopOf="@+id/play_archive_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_title_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/play_archive_btn"
+        style="@style/home_menu_btn"
+        android:text="@string/play_archive_string"
+        app:layout_constraintBottom_toTopOf="@+id/stats_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/live_game_btn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/stats_btn"
+        style="@style/home_menu_btn"
+        android:text="@string/stats_string"
+        app:layout_constraintBottom_toTopOf="@+id/about_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/play_archive_btn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/about_btn"
+        style="@style/home_menu_btn"
+        android:text="@string/about_this_string"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stats_btn" />
+</androidx.constraintlayout.widget.ConstraintLayout>

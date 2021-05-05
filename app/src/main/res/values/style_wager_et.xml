@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="wager_et" parent="clue_value_tv">
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:hint">@string/casual_wager_et_hint_string</item>
+        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:textColorHint">@color/value_yellow</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

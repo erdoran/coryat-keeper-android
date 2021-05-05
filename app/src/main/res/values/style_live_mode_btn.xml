@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="live_mode_btn" parent="home_menu_btn" />
+</resources>

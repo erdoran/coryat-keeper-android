@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="fj_incorrect_radio_btn" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:background">@drawable/bg_fj_incorrect_btn</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/fj_incorrect_btn_text_color</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+</resources>
