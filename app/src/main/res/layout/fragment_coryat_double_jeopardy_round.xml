@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+<data>
+
+    <variable
+        name="viewModel"
+        type="com.randoworks.coryatkeeper.ui.main.CoryatScorekeeperViewModel" />
+
+    <variable
+        name="handler"
+        type="com.randoworks.coryatkeeper.ui.main.DJRoundHandler" />
+</data>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -12,6 +24,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/coryat_dj_decrease_400_btn"
             style="@style/decrease_score_btn"
+            android:onClick="@{() -> handler.decrease400BtnClick()}"
             app:layout_constraintBottom_toBottomOf="@+id/coryat_dj_value_400_tv"
             app:layout_constraintEnd_toStartOf="@+id/coryat_dj_value_400_tv"
             app:layout_constraintStart_toStartOf="parent"
@@ -20,6 +33,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/coryat_dj_decrease_800_btn"
             style="@style/decrease_score_btn"
+            android:onClick="@{() -> handler.decrease800BtnClick()}"
             app:layout_constraintBottom_toBottomOf="@+id/coryat_dj_value_800_tv"
             app:layout_constraintEnd_toStartOf="@+id/coryat_dj_value_800_tv"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +42,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/coryat_dj_decrease_1200_btn"
             style="@style/decrease_score_btn"
+            android:onClick="@{() -> handler.decrease1200BtnClick()}"
             app:layout_constraintBottom_toBottomOf="@+id/coryat_dj_value_1200_tv"
             app:layout_constraintEnd_toStartOf="@+id/coryat_dj_value_1200_tv"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +51,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/coryat_dj_decrease_1600_btn"
             style="@style/decrease_score_btn"
+            android:onClick="@{() -> handler.decrease1600BtnClick()}"
             app:layout_constraintBottom_toBottomOf="@+id/coryat_dj_value_1600_tv"
             app:layout_constraintEnd_toStartOf="@+id/coryat_dj_value_1600_tv"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +60,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/coryat_dj_decrease_2000_btn"
             style="@style/decrease_score_btn"
+            android:onClick="@{() -> handler.decrease2000BtnClick()}"
             app:layout_constraintBottom_toBottomOf="@+id/coryat_dj_value_2000_tv"
             app:layout_constraintEnd_toStartOf="@+id/coryat_dj_value_2000_tv"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +69,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/coryat_dj_decrease_dd_btn"
             style="@style/decrease_score_btn"
+            android:onClick="@{() -> handler.decreaseDDBtnClick()}"
             android:text="@string/coryat_dd_miss_btn_string"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/coryat_dj_value_dd_tv"
@@ -119,6 +137,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/coryat_dj_increase_400_btn"
             style="@style/increase_score_btn"
+            android:onClick="@{() -> handler.increase400BtnClick()}"
             android:layout_marginStart="24dp"
             app:layout_constraintBottom_toBottomOf="@+id/coryat_dj_value_400_tv"
             app:layout_constraintEnd_toEndOf="parent"
@@ -128,6 +147,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/coryat_dj_increase_800_btn"
             style="@style/increase_score_btn"
+            android:onClick="@{() -> handler.increase800BtnClick()}"
             android:layout_marginStart="24dp"
             app:layout_constraintBottom_toBottomOf="@+id/coryat_dj_value_800_tv"
             app:layout_constraintEnd_toEndOf="parent"
@@ -137,6 +157,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/coryat_dj_increase_1200_btn"
             style="@style/increase_score_btn"
+            android:onClick="@{() -> handler.increase1200BtnClick()}"
             android:layout_marginStart="24dp"
             app:layout_constraintBottom_toBottomOf="@+id/coryat_dj_value_1200_tv"
             app:layout_constraintEnd_toEndOf="parent"
@@ -146,6 +167,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/coryat_dj_increase_1600_btn"
             style="@style/increase_score_btn"
+            android:onClick="@{() -> handler.increase1600BtnClick()}"
             android:layout_marginStart="24dp"
             app:layout_constraintBottom_toBottomOf="@+id/coryat_dj_value_1600_tv"
             app:layout_constraintEnd_toEndOf="parent"
@@ -155,6 +177,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/coryat_dj_increase_2000_btn"
             style="@style/increase_score_btn"
+            android:onClick="@{() -> handler.increase2000BtnClick()}"
             android:layout_marginStart="24dp"
             app:layout_constraintBottom_toBottomOf="@+id/coryat_dj_value_2000_tv"
             app:layout_constraintEnd_toEndOf="parent"
@@ -164,6 +187,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/coryat_dj_increase_dd_btn"
             style="@style/increase_score_btn"
+            android:onClick="@{() -> handler.increaseDDBtnClick()}"
             android:layout_marginStart="24dp"
             android:text="@string/coryat_dd_correct_btn_string"
             android:textSize="20sp"
@@ -173,5 +197,5 @@
             app:layout_constraintTop_toTopOf="@+id/coryat_dj_value_dd_tv" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
-
+</layout>
 

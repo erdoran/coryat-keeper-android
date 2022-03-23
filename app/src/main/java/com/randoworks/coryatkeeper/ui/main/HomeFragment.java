@@ -8,23 +8,22 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.randoworks.coryatkeeper.R;
+import com.randoworks.coryatkeeper.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
+
+    FragmentManager fragmentManager;
+    FragmentHomeBinding mBinding;
 
     public HomeFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment HomeScreenFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static HomeFragment newInstance() {
         HomeFragment fragment = new HomeFragment();
         return fragment;
@@ -38,7 +37,9 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_casual_double_jeopardy_round, container, false);
+        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
+        mBinding.setHandler(handler);
+        return mBinding.getRoot();
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -46,4 +47,12 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
     }
+
+    HomeHandler handler = new HomeHandler() {
+        @Override
+        public void scorekeeperBtnClick() {
+            fragmentManager = getParentFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.container, CoryatScorekeeperFragment.class, null).commit();
+        }
+    };
 }

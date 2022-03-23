@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -18,6 +19,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.randoworks.coryatkeeper.R;
 import com.randoworks.coryatkeeper.databinding.FragmentCoryatScorekeeperBinding;
 
+import java.util.Objects;
+
 public class CoryatScorekeeperFragment extends Fragment {
 
     CoryatScorekeeperViewModel mViewModel;
@@ -28,17 +31,32 @@ public class CoryatScorekeeperFragment extends Fragment {
         return new CoryatScorekeeperFragment();
     }
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+
+            @Override
+            public void handleOnBackPressed() {
+                ExitGameDialogFragment exitGameDialogFragment = new ExitGameDialogFragment();
+                exitGameDialogFragment.show(requireActivity().getSupportFragmentManager(),"TEMP");
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
+    }
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_coryat_scorekeeper, container, false);
-        mViewModel = new ViewModelProvider(this).get(CoryatScorekeeperViewModel.class);
+        mViewModel = new ViewModelProvider(requireActivity()).get(CoryatScorekeeperViewModel.class);
         mBinding.setViewModel(mViewModel);
         mBinding.setHandler(handler);
         final Observer<String> scoreObserver = new Observer<String>() {
             @Override
             public void onChanged(String scoreDisplay) {
-                mBinding.coryatScoreTv.setText("$" + scoreDisplay);
+                mBinding.coryatScoreTv.setText(scoreDisplay);
             }
         };
         mViewModel.getScoreDisplay().observe(getViewLifecycleOwner(), scoreObserver);
@@ -67,6 +85,8 @@ public class CoryatScorekeeperFragment extends Fragment {
         @Override
         public void clickExitBtn() {
 
+            ExitGameDialogFragment exitGameDialogFragment = new ExitGameDialogFragment();
+            exitGameDialogFragment.show(requireActivity().getSupportFragmentManager(),"TEMP");
         }
 
         @Override
@@ -76,6 +96,11 @@ public class CoryatScorekeeperFragment extends Fragment {
 
         @Override
         public void finishBtn() {
+            fragmentManager = getParentFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, CoryatReviewFragment.class, null)
+                    .setReorderingAllowed(true)
+                    .commit();
 
         }
     };

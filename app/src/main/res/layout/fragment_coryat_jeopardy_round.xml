@@ -27,6 +27,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/coryat_j_decrease_200_btn"
                 style="@style/decrease_score_btn"
+                android:onClick="@{() -> handler.decrease200BtnClick()}"
                 app:layout_constraintBottom_toBottomOf="@+id/coryat_j_value_200_tv"
                 app:layout_constraintEnd_toStartOf="@+id/coryat_j_value_200_tv"
                 app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +36,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/coryat_j_decrease_400_btn"
                 style="@style/decrease_score_btn"
+                android:onClick="@{() -> handler.decrease400BtnClick()}"
                 app:layout_constraintBottom_toBottomOf="@+id/coryat_j_value_400_tv"
                 app:layout_constraintEnd_toStartOf="@+id/coryat_j_value_400_tv"
                 app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +45,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/coryat_j_decrease_600_btn"
                 style="@style/decrease_score_btn"
+                android:onClick="@{() -> handler.decrease600BtnClick()}"
                 app:layout_constraintBottom_toBottomOf="@+id/coryat_j_value_600_tv"
                 app:layout_constraintEnd_toStartOf="@+id/coryat_j_value_600_tv"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +54,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/coryat_j_decrease_800_btn"
                 style="@style/decrease_score_btn"
+                android:onClick="@{() -> handler.decrease800BtnClick()}"
                 app:layout_constraintBottom_toBottomOf="@+id/coryat_j_value_800_tv"
                 app:layout_constraintEnd_toStartOf="@+id/coryat_j_value_800_tv"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,6 +63,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/coryat_j_decrease_1000_btn"
                 style="@style/decrease_score_btn"
+                android:onClick="@{() -> handler.decrease1000BtnClick()}"
                 app:layout_constraintBottom_toBottomOf="@+id/coryat_j_value_1000_tv"
                 app:layout_constraintEnd_toStartOf="@+id/coryat_j_value_1000_tv"
                 app:layout_constraintStart_toStartOf="parent"
@@ -67,6 +72,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/coryat_j_decrease_dd_btn"
                 style="@style/decrease_score_btn"
+                android:onClick="@{() -> handler.decreaseDDBtnClick()}"
                 android:text="@string/coryat_dd_miss_btn_string"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/coryat_j_value_dd_tv"
@@ -180,6 +186,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/coryat_j_increase_dd_btn"
                 style="@style/increase_score_btn"
+                android:onClick="@{() -> handler.increaseDDBtnCLick()}"
                 android:text="@string/coryat_dd_correct_btn_string"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/coryat_j_value_dd_tv"

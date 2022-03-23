@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_board_blue_gradient">
+
+        <androidx.fragment.app.FragmentContainerView
+
+            style="@style/round_fragment_container"
+            app:layout_constraintBottom_toTopOf="@id/coryat_scorekeeper_footer_ll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/coryat_scorekeeper_footer_ll"
+            style="@style/scorekeeper_footer_ll"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/all_time_btn"
+                style="@style/scorekeeper_menu_btn"
+                android:text="All Time" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/last_five_btn"
+                style="@style/scorekeeper_menu_btn"
+                android:text="Last Five" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

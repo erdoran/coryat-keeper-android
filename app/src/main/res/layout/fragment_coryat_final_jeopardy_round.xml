@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.randoworks.coryatkeeper.ui.main.CoryatScorekeeperViewModel" />
+
+        <variable
+            name="handler"
+            type="com.randoworks.coryatkeeper.ui.main.FJRoundHandler" />
+    </data>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -35,12 +48,15 @@
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/coryat_fj_incorrect_radio_btn"
                 style="@style/fj_incorrect_radio_btn"
+                android:onClick="@{() -> handler.setFJStatusIncorrect()}"
                 android:text="@string/fj_incorrect_btn_string" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/coryat_fj_correct_radio_btn"
                 style="@style/fj_correct_radio_btn"
+                android:onClick="@{() -> handler.setFJStatusCorrect()}"
                 android:text="@string/fj_correct_btn_string" />
         </RadioGroup>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
+</layout>

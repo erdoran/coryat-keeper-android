@@ -3,7 +3,7 @@
 
     <!-- fragment_home layout -->
     <string name="home_title_string">Coryat Keeper</string>
-    <string name="live_game_string">Live game scorekeeper</string>
+    <string name="live_game_string">Live scorekeeper</string>
     <string name="play_archive_string">Play archived game</string>
     <string name="stats_string">Stats</string>
     <string name="about_this_string">About this application</string>
@@ -51,5 +51,7 @@
 
     <!-- fragment_casual_scorekeeper layout -->
     <string name="casual_wager_et_hint_string">Enter wager</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- fragment_casual_scorekeeper_layout -->
 </resources>

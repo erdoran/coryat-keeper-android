@@ -89,6 +89,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/coryat_exit_radio_btn"
                 style="@style/scorekeeper_menu_btn"
+                android:onClick="@{() -> handler.clickExitBtn()}"
                 android:text="@string/exit_btn_string" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -99,6 +100,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/coryat_finish_radio_btn"
                 style="@style/scorekeeper_menu_btn"
+                android:onClick="@{() -> handler.finishBtn()}"
                 android:text="@string/finish_btn_string" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

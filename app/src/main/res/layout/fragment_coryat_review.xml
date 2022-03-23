@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.randoworks.coryatkeeper.ui.main.CoryatScorekeeperViewModel" />
+
+        <variable
+            name="handler"
+            type="com.randoworks.coryatkeeper.ui.main.ReviewStatsHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_board_blue_gradient">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/coryat_fragment_container"
+            android:name="com.randoworks.coryatkeeper.ui.main.CoryatReviewStatsFragment"
+            style="@style/round_fragment_container"
+            app:layout_constraintBottom_toTopOf="@id/coryat_scorekeeper_footer_ll"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout="@layout/fragment_coryat_review_stats" />
+
+        <LinearLayout
+            android:id="@+id/coryat_scorekeeper_footer_ll"
+            style="@style/scorekeeper_footer_ll"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/discard_game_btn"
+                style="@style/scorekeeper_menu_btn"
+                android:onClick="@{() -> handler.onDiscardBtnClick()}"
+                android:text="Discard Game" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/save_game_btn"
+                style="@style/scorekeeper_menu_btn"
+                android:onClick="@{() -> handler.onSaveBtnClick()}"
+                android:text="Save Game" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

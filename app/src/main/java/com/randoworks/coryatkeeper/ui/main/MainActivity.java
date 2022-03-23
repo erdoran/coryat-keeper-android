@@ -1,7 +1,6 @@
 package com.randoworks.coryatkeeper.ui.main;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 
@@ -15,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_activity);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, CoryatScorekeeperFragment.newInstance())
+                    .replace(R.id.container, HomeFragment.newInstance())
                     .commitNow();
         }
     }
